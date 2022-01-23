@@ -12,7 +12,7 @@ class Spectrum(Communication):
         :param value: Frequency in Hz
         :return: None
         """
-        self.__write("SENSe:SPECtrum:FREQuency:STARt {}".format(value))
+        self.write("SENSe:SPECtrum:FREQuency:STARt {}".format(value))
 
     def stop_freq(self, value):
         """
@@ -20,7 +20,7 @@ class Spectrum(Communication):
         :param value: Frequency in Hz
         :return: None
         """
-        self.__write("SENSe:SPECtrum:FREQuency:STOP {}".format(value))
+        self.write("SENSe:SPECtrum:FREQuency:STOP {}".format(value))
 
     def span_freq(self, value):
         """
@@ -28,7 +28,7 @@ class Spectrum(Communication):
         :param value: Frequency in Hz
         :return: None
         """
-        self.__write("SENSe:SPECtrum:FREQuency:SPAN {}".format(value))
+        self.write("SENSe:SPECtrum:FREQuency:SPAN {}".format(value))
 
     def center_freq(self, value):
         """
