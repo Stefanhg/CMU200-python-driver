@@ -3,9 +3,8 @@ from communication import Communication
 
 class Spectrum(Communication):
     """ Class for CMU200 spectrum configurations"""
-    def __init__(self, comport, timeout, sec_addr_serial, *args, **kwargs):
-        super(Spectrum, self).__init__(comport, timeout, sec_addr_serial, *args, **kwargs)
-
+    def __init__(self, comport, timeout, sec_addr_serial):
+        super(Spectrum, self).__init__(comport, timeout, sec_addr_serial)
 
     def start_freq(self, value):
         """
@@ -39,7 +38,7 @@ class Spectrum(Communication):
         """
         self.__write("SENSe:SPECtrum:FREQuency:CENTer {}".format(value))
 
-    def Bandwidth_freq(self, value):
+    def bandwidth_freq(self, value):
         """
         Set the spectrum Analyzer bandwidth frequency in Hz
         :param value: Frequency in Hz
@@ -54,7 +53,6 @@ class Spectrum(Communication):
         :return: None
         """
         self.__write("SENSe:SPECtrum:LEVel:RANGe {}".format(value))
-
 
         # Todo add more functions
         # list: https://github.com/bryan-rozier/Brython/blob/master/CRTU_Spectrum.py

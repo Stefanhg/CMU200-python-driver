@@ -1,10 +1,9 @@
 import pyvisa
 
 
-
 class Communication:
-    def __init__(self, comm_port, timeout, sec_addr_serial, *args, **kwargs):
-        super(Communication, self).__init__(*args, **kwargs)
+    def __init__(self, comm_port, timeout, sec_addr_serial):
+        super(Communication, self).__init__()
 
         # Initialize the instance
         if not hasattr(self, "inst"):

@@ -9,6 +9,5 @@ class Cmu200(object):
         :param comm_port:
         """
         # Initialize the other configuration classes
-        Communication(comm_port, timeout, sec_addr_serial)
+        # Communication(comm_port, timeout, sec_addr_serial)
         self.spectrum = Spectrum(comm_port, timeout, sec_addr_serial)
-
