@@ -12,7 +12,7 @@ class Spectrum(Communication):
         :param value: Frequency in Hz
         :return: None
         """
-        self.write("SENSe:SPECtrum:FREQuency:STARt {}".format(value))
+        self.query_write("SENSe:SPECtrum:FREQuency:STARt", value)
 
     def stop_freq(self, value):
         """
@@ -20,7 +20,7 @@ class Spectrum(Communication):
         :param value: Frequency in Hz
         :return: None
         """
-        self.write("SENSe:SPECtrum:FREQuency:STOP {}".format(value))
+        self.query_write("SENSe:SPECtrum:FREQuency:STOP", value)
 
     def span_freq(self, value):
         """
@@ -28,7 +28,7 @@ class Spectrum(Communication):
         :param value: Frequency in Hz
         :return: None
         """
-        self.write("SENSe:SPECtrum:FREQuency:SPAN {}".format(value))
+        self.query_write("SENSe:SPECtrum:FREQuency:SPAN", value)
 
     def center_freq(self, value):
         """
@@ -36,15 +36,15 @@ class Spectrum(Communication):
         :param value: Frequency in Hz
         :return: None
         """
-        self.__write("SENSe:SPECtrum:FREQuency:CENTer {}".format(value))
+        self.query_write("SENSe:SPECtrum:FREQuency:CENTer", value)
 
     def bandwidth_freq(self, value):
         """
-        Set the spectrum Analyzer bandwidth frequency in Hz
+        Set or query the spectrum Analyzer bandwidth frequency in Hz
         :param value: Frequency in Hz
         :return: None
         """
-        self.__write("SENSe:SPECtrum:FREQuency:BANDwidth {}".format(value))
+        self.query_write("SENSe:SPECtrum:FREQuency:BANDwidth", value)
 
     def level_range(self, value):
         """
@@ -52,7 +52,7 @@ class Spectrum(Communication):
         :param value: level in dB
         :return: None
         """
-        self.__write("SENSe:SPECtrum:LEVel:RANGe {}".format(value))
+        self.query_write("SENSe:SPECtrum:LEVel:RANGe", value)
 
         # Todo add more functions
         # list: https://github.com/bryan-rozier/Brython/blob/master/CRTU_Spectrum.py

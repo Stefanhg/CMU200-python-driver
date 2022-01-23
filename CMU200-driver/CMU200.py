@@ -1,5 +1,5 @@
 from spectrum import Spectrum
-
+from fetch import Fetch
 
 class Cmu200(object):
     """Class for controlling the CMU200 """
@@ -12,6 +12,7 @@ class Cmu200(object):
 
         # Initialize the other configuration classes
         self.spectrum = Spectrum(comm_port, timeout, sec_addr_serial)
+        self.fetch = Fetch(comm_port, timeout, sec_addr_serial)
 
     def close(self):
         """Closes the Cmu200 instance"""

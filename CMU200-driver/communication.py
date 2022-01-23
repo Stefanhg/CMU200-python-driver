@@ -34,5 +34,16 @@ class Communication:
         data = self.inst.query(self.sec_addr_serial + command)
         return data
 
+    def query_write(self, command, value):
+        """
+        Query or write depending if value is None or has data
+        :param command: Command to write to CMU200, for Serial configure the sec_addr_serial to communicate
+        :param value: The value to be written, if None it will query instead of writing
+        :return None is value is not None, return result from query if value is None
+        """
+        if value is None:
+            self.query(command + "?")
+        self.write(command + " {}".format(value))
+
     def close(self):
         self.inst.close()
