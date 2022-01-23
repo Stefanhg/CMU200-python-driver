@@ -1,0 +1,27 @@
+
+
+
+# communication.py
+class Communication:
+    def __init__(self):
+        super(Communication, self).__init__()
+        rm = pyvisa.ResourceManager()
+        self.inst = rm.open_resource(self.comport)
+        self.inst.timeout = self.timeout  # Configure the timeout
+
+# CMU200.py
+from spectrum import Spectrum
+class Cmu200(object):
+    def __init__(self, comm_port, timeout=1):
+        self.comm_port = comm_port
+        self.timeout = timeout
+        # Initialize the other configuration classes
+        self.spectrum = Spectrum()
+
+# spectrum.py
+from communication import Communication
+class Spectrum(Communication):
+    """ Class for CMU200 spectrum configurations"""
+
+    def start_freq(self, value):
+        self.__write("SENSe:SPECtrum:FREQuency:SPAN {}".format(value))
