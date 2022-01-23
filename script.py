@@ -1,9 +1,5 @@
+from CMU200 import Cmu200
 
-
-import CMU200
-
-
-CMU = CMU200.Cmu200("ASRL6::INSTR", 1, "1;")
-
+CMU = Cmu200(comm_port="ASRL6::INSTR", timeout=1, sec_addr_serial="1;")
 CMU.spectrum.start_freq(100E6)
-# CMU.spectrum.stop_freq(200E6)
+CMU.close()
