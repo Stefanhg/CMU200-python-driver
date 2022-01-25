@@ -1,7 +1,7 @@
 import pyvisa
 
 
-class Communication:
+class Communication(object):
     """Class for the CMU200 communication module"""
     def __init__(self, comm_port, timeout, sec_addr_serial):
         super(Communication, self).__init__()
