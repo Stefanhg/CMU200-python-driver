@@ -1,11 +1,11 @@
 
-from communication import Communication
+from .communication import Communication
 
 
 class Fetch(Communication):
     """ Class for CMU200 spectrum configurations"""
 
-    def __init__(self, comport, timeout, sec_addr_serial, *argh, ):
+    def __init__(self, comport, timeout, sec_addr_serial):
         super(Communication, self).__init__(comport, timeout, sec_addr_serial)
 
 

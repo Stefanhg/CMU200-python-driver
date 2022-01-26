@@ -56,7 +56,7 @@ class Generator(Communication):
         command = "INITiate:RFGenerator"
         self.write(command)
 
-    def abort_rfgen(self,,):
+    def abort_rfgen(self):
         command = "ABORt:RFGenerator"
         self.write(command)
 

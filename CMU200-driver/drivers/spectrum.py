@@ -1,4 +1,4 @@
-from communication import Communication
+from .communication import Communication
 
 
 class Spectrum(Communication):
